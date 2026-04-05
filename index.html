@@ -1,190 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fit Life by Rentie</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fit Life by Rentie</title>
 
-    body {
-      background: #ffffff;
-      color: #333;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-    header {
-      background: linear-gradient(135deg, #00c9a7, #d1007f);
-      color: white;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+body {
+  background: #ffffff;
+  color: #333;
+}
 
-    header h1 {
-      font-size: 1.8rem;
-    }
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #00c9a7, #d1007f);
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-    nav {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
+header h1 {
+  font-size: 1.8rem;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
+nav {
+  display: flex;
+  gap: 20px;
+}
 
-    .hero {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 60px 20px;
-      background: #00c9a7;
-      color: white;
-      flex-direction: column;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
 
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-    }
+nav a:hover {
+  opacity: 0.7;
+}
 
-    .hero p {
-      max-width: 600px;
-    }
+/* HERO */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #00c9a7, #00e0b8);
+  color: white;
+}
 
-    .products {
-      display: flex;
-      justify-content: space-around;
-      padding: 40px 20px;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
 
-    .product-card {
-      background: white;
-      border: 2px solid #00c9a7;
-      border-radius: 10px;
-      padding: 20px;
-      flex: 1 1 250px;
-      text-align: center;
-      transition: transform 0.3s;
-    }
+.hero p {
+  max-width: 600px;
+  margin-bottom: 20px;
+}
 
-    .product-card:hover {
-      transform: translateY(-5px);
-      border-color: #d1007f;
-    }
+.hero button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: #d1007f;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
 
-    .product-card h3 {
-      color: #d1007f;
-      margin-bottom: 10px;
-    }
+.hero button:hover {
+  transform: scale(1.05);
+}
 
-    .about {
-      display: flex;
-      padding: 40px 20px;
-      gap: 20px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+/* IMAGE */
+.hero-img {
+  width: 100%;
+  max-width: 500px;
+  margin: 30px auto;
+  display: block;
+  border-radius: 15px;
+}
 
-    .about div {
-      flex: 1 1 300px;
-    }
+/* PRODUCTS */
+.products {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 50px 20px;
+  flex-wrap: wrap;
+}
 
-    .about h2 {
-      color: #00c9a7;
-      margin-bottom: 10px;
-    }
+.product-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-    footer {
-      background: #d1007f;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 20px;
-    }
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+.product-card h3 {
+  color: #d1007f;
+  margin-bottom: 10px;
+}
 
-      .hero h2 {
-        font-size: 2rem;
-      }
+/* ABOUT */
+.about {
+  display: flex;
+  gap: 30px;
+  padding: 60px 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: #f9f9f9;
+}
 
-      .products {
-        flex-direction: column;
-      }
+.about div {
+  flex: 1 1 300px;
+  max-width: 500px;
+}
 
-      .about {
-        flex-direction: column;
-      }
-    }
-  </style>
+.about h2 {
+  color: #00c9a7;
+  margin-bottom: 15px;
+}
+
+/* FOOTER */
+footer {
+  background: #d1007f;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  nav {
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .products {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    width: 90%;
+  }
+
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Fit Life by Rentie</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#products">Products</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+  <h1>Fit Life by Rentie</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <section class="hero">
-    <h2>Balance Your Mind & Body</h2>
-    <p>Discover natural wellness through our holistic products: Ashwagandha, Lotus Flower, and Turmeric.</p>
-  </section>
-<img src="img_images/blue-lotus-tea-recipes.jpg" alt="Blooming blue lotus flowers floating serenely on the surface of a calm, reflective pond, conveying a sense of peace and tranquility">
+<section class="hero">
+  <h2>Balance Your Mind & Body</h2>
+  <p>Discover natural wellness through Ashwagandha, Lotus Flower, and Turmeric.</p>
+  <button>Shop Now</button>
+</section>
 
-  <section class="products" id="products">
-    <div class="product-card">
-      <h3>Ashwagandha</h3>
-      <p>Reduce stress and improve mental clarity with this powerful adaptogen.</p>
-    </div>
+<img src="images/blue-lotus-tea-recipes.jpg" alt="Blue Lotus Tea" class="hero-img">
 
-    <div class="product-card">
-      <h3>Lotus Flower</h3>
-      <p>Enhance spiritual balance and inner peace with the sacred lotus.</p>
-    </div>
+<section class="products" id="products">
+  <div class="product-card">
+    <h3>Ashwagandha</h3>
+    <p>Reduce stress and improve mental clarity with this powerful adaptogen.</p>
+  </div>
 
-    <div class="product-card">
-      <h3>Turmeric</h3>
-      <p>Boost your immune system and fight inflammation naturally.</p>
-    </div>
-  </section>
+  <div class="product-card">
+    <h3>Lotus Flower</h3>
+    <p>Enhance spiritual balance and inner peace.</p>
+  </div>
 
-  <section class="about" id="about">
-    <div>
-      <h2>About Us</h2>
-      <p>Fit Life by Rentie is dedicated to promoting holistic health through natural remedies and mindful living. Our products are carefully curated to support both mental and physical well-being.</p>
-    </div>
-    <div>
-      <p>We believe in the power of nature to heal, energize, and restore balance in your life.</p>
-    </div>
-  </section>
+  <div class="product-card">
+    <h3>Turmeric</h3>
+    <p>Boost immunity and fight inflammation naturally.</p>
+  </div>
+</section>
 
-  <footer id="contact">
-    <p>&copy; 2026 Fit Life by Rentie | Wellness for Life</p>
-  </footer>
+<section class="about" id="about">
+  <div>
+    <h2>About Us</h2>
+    <p>Fit Life by Rentie promotes holistic health through natural remedies and mindful living.</p>
+  </div>
+  <div>
+    <p>We believe in nature's power to restore balance, energy, and peace.</p>
+  </div>
+</section>
+
+<footer id="contact">
+  <p>&copy; 2026 Fit Life by Rentie | Wellness for Life</p>
+</footer>
 
 </body>
 </html>
